@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="news">
+    <header>
+        <div class="nav">
+            <ul>
+                <li class="home"><a href="navigation.html">Home</a></li>
+                <li class="tutorials">
+                    <a class="active" href="photography.html">Photography</a></li>
+                <li class="about"><a href="aboutme.html">About me</a></li>
+                <li class="news"><a href="technology.html">Resize</a></li>
+                <li class="contact"><a href="contact.html">Contact</a></li>
+                <li class="debate"><a href="phone.html">Debate</a></li>
+                <img class="righy" src="images/unhealthy.png" height="50px" width="80"><img>
+            </ul>
+        </div>
+
+    </header>
+    <div2 class="home2">
+
+        <h2>
+            
+        </h2>
+        <h5>
+            hi boys
+        </h5>
+        
+
+    </div2>
+    <div>
+
+    </div>
+</body>
+    <body>
+		<!-- Container for Slider and Navigation Controls -->
+		<div class="gallery">
+			<h2>Cute Animals</h2>
+			<!-- The actual moving Slider -->
+			<div class="slider">
+				<ul>
+					<li><img src="slider/images/big1.jpeg" class="slides" alt="Image1"></li>
+					<li><img src="slider/images/big2.jpeg" class="slides" alt="Image2"></li>
+					<li><img src="slider/images/big3.jpeg" class="slides" alt="Image3"></li>
+					<li><img src="slider/images/big4.jpeg" class="slides" alt="Image4"></li>
+				</ul>
+			</div>
+			<!-- Navigation Button Controls -->
+			<div id="slider-nav">
+				<button data-dir="prev">Previous</button>
+				<button data-dir="next" style="float:right;">Next</button>
+               
+			</div>
+		</div>
+		<!-- Loading JavaScript Codes. -->
+		<script src="scripts/jquery-2.1.0.js"></script>
+		<script src="scripts/simpleSliderScript.js"></script>
+		<script>
+			// 
+			jQuery(document).ready(function ($) {
+				// creating a container variable to hold the 'UL' elements. It uses method chaining.
+				var container=$('div.slider')
+											.css('overflow','hidden')
+											.children('ul');
+				
+				/* 
+				On the event of mouse-hover, 
+					i) Change the visibility of Button Controls.
+					ii) SET/RESET the "intv" variable to switch between AutoSlider and Stop mode.
+				*/
+				$('.gallery').hover(function( e ){
+					$('#slider-nav').toggle();
+					return e.type=='mouseenter'?clearInterval(intv):autoSlider();
+				});
+				
+				// Creating the 'slider' instance which will set initial parameters for the Slider.
+				var sliderobj= new slider(container,$('#slider-nav'));
+				/*
+				This will trigger the 'setCurrentPos' and 'transition' methods on click of any button
+				 "data-dir" attribute associated with the button will determine the direction of sliding.
+				*/
+				sliderobj.nav.find('button').on('click', function(){
+					sliderobj.setCurrentPos($(this).data('dir'));
+					sliderobj.transition();
+				});
+				
+				autoSlider(); // Calling autoSlider() method on Page Load.
+				
+				/* 
+				This function will initialize the interval variable which will cause execution of the inner function after every 2 seconds automatically.
+				*/
+				function autoSlider()
+				{
+					return intv = setInterval(function(){
+						sliderobj.setCurrentPos('next');
+						sliderobj.transition();
+					}, 2000);
+				}
+				
+			});
+		</script>
+	</body>
+    <h2 text-align="center">By spiderman</h2>
+</html>
+
+
