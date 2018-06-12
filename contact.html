@@ -7,6 +7,7 @@
     <title>Krusty the Clown in CSS</title>
     <meta name="description" content="Krusty the Clown in CSS">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   
 
    
     <link rel="stylesheet" href="krusty.css">  
@@ -17,33 +18,68 @@
     <header>
         <div class="nav">
             <ul>
-                <li class="home"><a href="navigation.html">Home</a></li>
+                <li class="home"><a href="index.html">Home</a></li>
                 <li class="tutorials">
                     <a class="active" href="photography.html">Photography</a></li>
                 <li class="about"><a href="aboutme.html">About me</a></li>
                 <li class="news"><a href="technology.html">Resize</a></li>
                 <li class="contact"><a href="contact.html">Contact</a></li>
-               
+                
                                 <img class="righy" src="images/unhealthy.png" height="50px" width="80" ><img>
             </ul>
         </div>
     </header>
-    <div2 class="contact1">Call me at 0800 83 83 83
+</body>
+<body2>
+<video autoplay muted loop id="myVideo">
+  <source src="videoback.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+  <h1>Contact me</h1>
+    Call me at 0800 83 83 83
     <br>
     Follow me on Instagram @rufus.lucasq for weekly updates
-        <br>
+        
+    <br>
     Add me on snapchat for daily previews of our new products @rufusislucas
         <br>
+    
     Email me l.quirozfrankland@student.saintkentigern.com
-    </div2>
+    <br>
+  <p2>Thank you for reaching us, we hope you have lovely day.</p2>
+    <br>
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>
 
-    </body>
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+
+</body2>
+
+
+
+    
    
 
 
       
 
 <body>
+    
     
     <div id="krusty">
 	<div class="head">
@@ -139,4 +175,4 @@
     
 </body>
 </html>
-    </html>
+    
